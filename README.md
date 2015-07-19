@@ -1,7 +1,7 @@
 # *Programming in HTML5 with JavaScript & CSS3*
 ## Study Guide
 
-Markdown version of notes for Programming in HTML5 with JavaScript and CSS3
+Markdown version of notes for Programming in HTML5 with JavaScript and CSS3. This study guide was originally created by @Mellbourne
 
 ## Objectives
 
