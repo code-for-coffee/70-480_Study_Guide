@@ -13,7 +13,7 @@ This repository is a markdown version of notes for Programming in HTML5 with Jav
 
 ## 1. Implement and Manipulate Document Structures and Objects
 
-**Create the document structure**
+### Create the document structure
 
 This objective may include but is not limited to: structure the UI by using semantic markup, including for search engines and screen readers (Section, Article, Nav, Header, Footer, and Aside).
 
@@ -59,7 +59,7 @@ The `#container` defines how wide the Web page contents will be, as well as any 
 - `alt=””` when purely decorative
 - `aria-labelledby` & `aira-describedby`
 
-**Write code that interacts with UI controls**
+### Write code that interacts with UI controls
 
 This objective may include but is not limited to: programmatically add and modify HTML elements; implement media controls; implement HTML5 canvas and SVG graphics.
 
@@ -125,9 +125,11 @@ grd.addColorStop(0,"red")
 </svg>
 ```
 
-Apply styling to HTML elements programmatically.
-This objective may include but is not limited to: change the location of an element; apply a transform; show and hide elements
-css position
+### Apply styling to HTML elements programmatically**
+
+This objective may include but is not limited to: change the location of an element; apply a transform; show and hide elements.
+
+**css position
 static, absolute, fixed, relative // fixed is relative browser window, absolute relative parent
 location
 document.getElementById("movetext").style.left = 100px;
