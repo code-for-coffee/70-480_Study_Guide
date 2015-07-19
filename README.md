@@ -25,7 +25,7 @@ The `#container` defines how wide the Web page contents will be, as well as any 
  width: 870px;
  margin: 0 0 0 20px; /* top right bottom left */
  padding: 0;
- }
+}
  ```
  
 **Search Engine Optimization (SEO)**
@@ -46,22 +46,31 @@ The `#container` defines how wide the Web page contents will be, as well as any 
 <fieldset><legend></legend></fieldset> <!-- (groupbox) -->
 <label for=”inputfieldid”></label>
 ```
-semantic markup ARIA
-roles: dialog, directory, grid, heading, main, menu, tree
-states & properties: aria-autocomplete, aria-checked, aria-haspopup
-landmark roles: role=application, banner, form, main, navigation, search
-live regions: alert, log, marquee
-mark regions with aria-live=’polite’ // assertive
-type of update: relevant=”additions”
-aria-busy=true during updates
-alt=”” when purely decorative
-aria-labelledby aira-describedby
-Write code that interacts with UI controls.
-This objective may include but is not limited to: programmatically add and modify HTML elements; implement media controls; implement HTML5 canvas and SVG graphics
-add and modify
-appendChild
-removeChild
-media controls
+**Semantic markup: ARIA - Disability Compliance**
+
+- Start here: https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA
+- *Roles*: dialog, directory, grid, heading, main, menu, tree
+- *States & Properties*: aria-autocomplete, aria-checked, aria-haspopup
+- Landmark roles: `role=application`, banner, form, main, navigation, search
+- Live regions: alert, log, marquee
+- Mark regions with `aria-live=’polite’` // assertive
+- Type of update: `relevant=”additions`”
+- `aria-busy=true` during updates
+- `alt=””` when purely decorative
+- `aria-labelledby` & `aira-describedby`
+
+**Write code that interacts with UI controls**
+
+This objective may include but is not limited to: programmatically add and modify HTML elements; implement media controls; implement HTML5 canvas and SVG graphics.
+
+Vanilla Javascript DOM Manipultaiton methods
+- `add` and `modify`
+- `appendChild`
+- `removeChild`
+
+**Media controls**
+
+```html
 <video>
    <source src="video.mp4" type='video/mp4' />
    <source src="video.webm" type='video/webm' />
@@ -71,10 +80,18 @@ media controls
    </object>
    No native support, download the video <a href="video.mp4">here</a>.
 </video>
+```
 
-video tag attributes: autoplay, controls, muted, poster, loop
-commands play() pause()
-HTML5 canvas
+Video tag attributes: 
+- `autoplay` 
+- `controls`
+- `muted`
+- `poster`
+- `loop`
+- Methods `play()` & `pause()`
+
+**HTML5 canvas**
+```javascript
 <script type="text/javascript">
 var c=document.getElementById("myCanvas");
 var ctx=c.getContext("2d");
@@ -89,8 +106,10 @@ ctx.stroke();
 var grd=ctx.createLinearGradient(0,0,200,0);
 grd.addColorStop(0,"red")
 </script>
-SVG
-examples
+```
+**SVG**
+
+```html
 <svg xmlns="http://www.w3.org/2000/svg" version="1.1">
    <circle cx="100" cy="50" r="40" stroke="black" stroke-width="2" fill="red" />
 
@@ -103,6 +122,9 @@ examples
     </filter>
   </defs>
   <rect width="90" height="90" stroke="green" stroke-width="3" fill="yellow" filter="url(#f1)" />
+</svg>
+```
+
 Apply styling to HTML elements programmatically.
 This objective may include but is not limited to: change the location of an element; apply a transform; show and hide elements
 css position
