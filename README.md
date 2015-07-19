@@ -125,27 +125,51 @@ grd.addColorStop(0,"red")
 </svg>
 ```
 
-### Apply styling to HTML elements programmatically**
+### Apply styling to HTML elements programmatically
 
 This objective may include but is not limited to: change the location of an element; apply a transform; show and hide elements.
 
-**css position
-static, absolute, fixed, relative // fixed is relative browser window, absolute relative parent
-location
+**Css positioning**
+
+- `static`
+- `absolute`
+- `fixed`
+- `relative` - fixed is relative browser window, absolute relative parent
+
+**Location**
+```javascript
 document.getElementById("movetext").style.left = 100px;
-apply a transform
-    -webkit-transform: rotate(30deg);
-translate(), scale(), skew(), matrix()
-show and hide
-display: block; display: none; (and take up no space) display: inline-block; display: list-item;
-visibility: visible; visibility: hidden; (but still take up space)
-Implement HTML5 APIs.
+```
+
+**Apply a transform**
+
+- `-webkit-transform: rotate(30deg);`
+- `translate()`
+- `scale()`
+- `skew()`
+- `matrix()`
+
+**Show and hide**
+
+- `display: block; display: none;` (and take up no space) 
+- `display: inline-block;`
+- `display: list-item;`
+- `visibility: visible; visibility: hidden;` (but still take up space)
+
+### Implement HTML5 APIs
 This objective may include but is not limited to: implement storage APIs, AppCache API, and Geolocation API
-storage
+storage.
+
+```javascript
 typeof(Storage)!=="undefined"
-localStorage.foo = “bar” permanent!
-sessionStorage for the session
-AppCache - cached until manifest changes!
+localStorage.foo = “bar” //permanent!
+```
+
+`sessionStorage` for the session
+`AppCache` - cached until manifest changes!
+
+**Demo AppCache manifest**
+```html
 <html manifest=”demo.appcache”>
 CACHE MANIFEST
 # 2012-02-21 v1.0.0
@@ -158,6 +182,9 @@ login.asp
 
 FALLBACK:
 /html/ /offline.html
+```
+
+```javascript
 var appCache = window.applicationCache;
 
 switch (appCache.status) {
@@ -177,20 +204,35 @@ switch (appCache.status) {
     return 'UPDATEREADY';
 appCache.swapCache(); // swaps 
 appCache.update():  // update cache but does not reload window 
-Geolocation
+```
+**Geolocation**
+
+```javascript
 navigator.geolocation.getCurrentPosition(showPosition);
 function showPosition(position)
   {
-  x.innerHTML="Latitude: " + position.coords.latitude + 
-setInterval(), clearInterval(), setTimeout() and clearTimeout
-$(window).load(function(){   // executes after images have been loaded too
-Establish the scope of objects and variables.
-This objective may include but is not limited to: define the lifetime of variables; keep objects out of the global namespace; use the “this” keyword to reference an object that fired an event; scope variables locally and globally
-delete to undefine variables (but not globals defined without var)
-Create and implement objects and methods.
-This objective may include but is not limited to: implement native objects; create custom objects and custom properties for native objects using prototypes and functions; inherit from an object; implement native methods and create custom methods
-http://phrogz.net/JS/classes/OOPinJS.html
-http://phrogz.net/JS/classes/OOPinJS2.html
+  x.innerHTML="Latitude: " + position.coords.latitude;
+  }
+```
+
+**Window Load**
+`$(window).load(function(){ // executes after images have been loaded too`
+
+### Establish the scope of objects and variables
+
+This objective may include but is not limited to: define the lifetime of variables; keep objects out of the global namespace; use the “this” keyword to reference an object that fired an event; scope variables locally and globally.
+
+Delete to undefine variables (but not globals defined without var).
+
+### Create and implement objects and methods
+
+This objective may include but is not limited to: implement native objects; create custom objects and custom properties for native objects using prototypes and functions; inherit from an object; implement native methods and create custom methods.
+
+- http://phrogz.net/JS/classes/OOPinJS.html
+- http://phrogz.net/JS/classes/OOPinJS2.html
+
+**Inheritance**
+```javascript
 Cat.prototype = new Mammal();
 SuperCar.prototype = Object.create(Car.prototype);
 object literal
@@ -199,7 +241,10 @@ shorthand for
 personObj=new Object();
 personObj.firstname="John";
 personObj.lastname="Doe";
-using a constructor:
+```
+
+**Using a constructor**
+```javascript
 function person(firstname,lastname,age,eyecolor)
 {
   this.firstname=firstname;
@@ -209,3 +254,4 @@ function person(firstname,lastname,age,eyecolor)
   {
     this.lastname=name;
   }
+```
